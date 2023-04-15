@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Website</title>
+</head>
+<body>
+    <h1>Welcome to My Website</h1>
+    <p>Request ID: <span id="request-id"></span></p>
+    <button onclick="redirectToApp()">Open My App</button>
+
+    <script>
+        function redirectToApp() {
+            var requestId = document.getElementById("request-id").textContent;
+            var appUrl = "myapp://example.com/path?request_id=" + requestId;
+            window.location.href = appUrl;
+        }
+
+        // Extract request ID from query string
+        var urlParams = new URLSearchParams(window.location.search);
+        var requestId = urlParams.get("request_id");
+
+        // Display request ID on page
+        var requestIdElem = document.getElementById("request-id");
+        requestIdElem.textContent = requestId;
+    </script>
+</body>
+</html>
