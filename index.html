@@ -12,7 +12,7 @@
         function redirectToApp() {
             var requestId = document.getElementById("request-id").textContent;
             var appUrl = "egov://";
-            window.location.href = appUrl;
+            window.location.replace(appUrl);
         }
 
         // Extract request ID from query string
